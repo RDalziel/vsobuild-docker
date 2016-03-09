@@ -26,6 +26,16 @@ RUN sudo apt-get install nodejs-legacy -y
 # INSTALL VSO Agent
 RUN sudo npm install vsoagent-installer -g
 
+# INSTALL NPM Build Tools
+
+RUN sudo npm install gulp-cli -g
+RUN sudo npm install grunt-cli -g
+RUN sudo npm install tsd -g
+RUN sudo npm install bower -g
+RUN sudo npm install jspm -g
+RUN sudo npm install cordova -g
+RUN sudo npm install ionic -g
+
 #CREATE SOME dirs
 RUN mkdir opt/buildagent
 RUN mkdir opt/buildagent/_work
