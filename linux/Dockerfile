@@ -53,6 +53,8 @@ RUN su ${vso_service_username}
 #  Install the agent
 WORKDIR /opt/buildagent
 RUN vsoagent-installer
+sudo sed -i -- 's/.\/runtime\/node/\/usr/g' configure.sh
+sudo sed -i -- 's/.\/runtime\/node/\/usr/g' run.sh
 WORKDIR /opt/buildagent/agent
 RUN sudo chown -R ${vso_service_username} /opt/buildagent
 
